@@ -19,6 +19,15 @@ public class Patient {
 		this.currentBloodLevel = currentBloodLevel;
 		this.currentHealth = currentHealth;
 	}
+	/**
+	 * Patient gets admitted to hospital with default values
+	 * @param name the patients name
+	 */
+	public Patient(String name) {
+		this.name = name;
+		this.currentBloodLevel = BLOOD_LEVEL;
+		this.currentHealth = HEALTH_LEVEL;
+	}
 	
 	public String getName() {
 		// TODO Auto-generated method stub

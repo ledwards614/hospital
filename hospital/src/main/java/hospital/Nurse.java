@@ -3,30 +3,16 @@ package hospital;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Nurse {
-	private String name;
-	private int idNum;
+public class Nurse extends Employee{
 	private int NURSE_SALARY = 50000;
+	private int salary;
 
 	// List of Patients
 	ArrayList<Patient> patientList = new ArrayList<>();
 
 	public Nurse(String name, int idNum) {
-		this.name = name;
-		this.idNum = idNum;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public int getId() {
-		return idNum;
-	}
-
-	public int calculatePay() {
-		// TODO Auto-generated method stub
-		return NURSE_SALARY;
+		super(name, idNum);
+		this.salary = NURSE_SALARY;
 	}
 
 	public void admitPatient(Patient patient) {
@@ -74,8 +60,13 @@ public class Nurse {
 	
 	@Override
 	public String toString() {
-		String stats = "Nurse: " + name + " " + idNum + " " + listPatients();
+		String stats = "Nurse: " + getName() + " " + getId() + " " + listPatients();
 		return stats;
+	}
+
+	@Override
+	public int calculatePay() {
+		return NURSE_SALARY;
 	}
 
 

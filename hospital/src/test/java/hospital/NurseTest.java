@@ -7,21 +7,21 @@ import org.junit.Test;
 public class NurseTest {
 	@Test
 	public void testNurseName() {
-		Nurse nurse = new Nurse("Sandy", 111);
+		Employee nurse = new Nurse("Sandy", 111);
 		// verify nurse name correct
 		assertEquals("Sandy", nurse.getName());
 	}
 
 	@Test
 	public void testNurseId() {
-		Nurse nurse = new Nurse("Sandy", 111);
+		Employee nurse = new Nurse("Sandy", 111);
 		// verify nurse name correct
 		assertEquals(111, nurse.getId());
 	}
 
 	@Test
 	public void testPay() {
-		Nurse nurse = new Nurse("Amy", 123);
+		Employee nurse = new Nurse("Amy", 123);
 		assertEquals(50000, nurse.calculatePay());
 	}
 	@Test
