@@ -65,6 +65,24 @@ public class NurseTest {
 		assertEquals(30, nurse.getPatient("Henry").getCurrentHealth());
 		
 	}
+	
+	@Test
+	public void testCareForAll() {
+		Nurse nurse = new Nurse("Olivia", 225);
+		Patient ptOne = new Patient("Henry", 60, 20); 
+		Patient ptTwo = new Patient("Jack"); 
+		Patient ptThree = new Patient("Evan", 40, 40); 
+		nurse.admitPatient(ptOne);
+		nurse.admitPatient(ptTwo);
+		nurse.admitPatient(ptThree);
+		
+		nurse.careForAllPatients();
+		assertEquals(30, nurse.getPatient("Henry").getCurrentHealth());
+		assertEquals(20, nurse.getPatient("Jack").getCurrentHealth());
+		assertEquals(50, nurse.getPatient("Evan").getCurrentHealth());
+		
+	}
+	
 	@Test
 	public void testDrawBlood() {
 		Nurse nurse = new Nurse("Olivia", 225);

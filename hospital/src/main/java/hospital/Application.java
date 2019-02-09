@@ -60,7 +60,7 @@ public class Application {
 		case "1":
 			System.out.println(listEmployees.basicEmployeeInfo());
 			System.out.println("");
-			System.out.println("Press any key to continue");
+	System.out.println("Press any key to continue");
 			input.nextLine();
 			//need to stop vampJanitor and surgeon from double printing
 			break;
