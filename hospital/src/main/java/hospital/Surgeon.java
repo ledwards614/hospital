@@ -38,6 +38,7 @@ public class Surgeon extends Doctor implements DrawBloodInterface, CareForPatien
 
 	@Override
 	public String toString() {
+		//String stats = super.toString() + " " + getIsOperating() + "\n";
 		String stats = getClass().getSimpleName() + ": " + getName() + " " + getId() + " " + getSpecialty() + " " + getIsOperating() + "\n";
 		return stats;
 	}

@@ -59,17 +59,31 @@ public class Application {
 		switch (mainMenuChoice) {
 		case "1":
 			System.out.println(listEmployees.basicEmployeeInfo());
+			System.out.println("");
+			System.out.println("Press any key to continue");
+			input.nextLine();
+			//need to stop vampJanitor and surgeon from double printing
 			break;
 		case "2":
 			System.out.println(listEmployees.getSalaries());
+			System.out.println("");
+			System.out.println("Press any key to continue");
+			input.nextLine();
 			break;
 		case "3":
-			
+			System.out.println(listEmployees.canDrawBlood());
+			System.out.println("");
+			System.out.println("Press any key to continue");
+			input.nextLine();
 			break;
 		case "4":
-			
+			System.out.println(listEmployees.canCareForPatients());
+			System.out.println("");
+			System.out.println("Press any key to continue");
+			input.nextLine();
 			break;
 		case "5":
+			//create a employee menu
 			
 			break;
 		case "6":
