@@ -24,20 +24,21 @@ public class Surgeon extends Doctor implements DrawBloodInterface, CareForPatien
 	}
 	
 	@Override
-	public void careForPatient() {
-		// TODO Auto-generated method stub
-		
-	}
+		public void careForPt(Patient patient) {		
+			//Patient ptToCareFor = new Patient(patientName);
+			patient.increaseHealth();	
+		}
+	
 
 	@Override
-	public void drawBlood() {
-		// TODO Auto-generated method stub
+	public void drawBlood(Patient patient) {
+		patient.decreaseBlood();
 		
 	}
 
 	@Override
 	public String toString() {
-		String stats = "Surgeon: " + getName() + " " + getId() + " " + getSpecialty() + " " + getIsOperating();
+		String stats = getClass().getSimpleName() + ": " + getName() + " " + getId() + " " + getSpecialty() + " " + getIsOperating() + "\n";
 		return stats;
 	}
 

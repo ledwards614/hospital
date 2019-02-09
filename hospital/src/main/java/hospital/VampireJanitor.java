@@ -6,10 +6,13 @@ public class VampireJanitor extends Janitor implements DrawBloodInterface {
 		super(name, idNum);
 	}
 
+
 	@Override
-	public void drawBlood() {
-		// TODO Auto-generated method stub
+	public void drawBlood(Patient patient) {
+		patient.decreaseBlood();
 		
 	}
+
+	
 
 }

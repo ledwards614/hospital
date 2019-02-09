@@ -2,6 +2,6 @@ package hospital;
 
 public interface DrawBloodInterface {
 	
-	public void drawBlood();
+	public void drawBlood(Patient patient);
 
 }

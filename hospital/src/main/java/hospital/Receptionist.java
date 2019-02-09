@@ -22,7 +22,7 @@ public class Receptionist extends Employee {
 	}
 	@Override
 	public String toString() {
-		String stats = "Receptionist: " + getName() + " " + getId() + " " + getIsOnPhone();
+		String stats = getClass().getSimpleName() + ": " + getName() + " " + getId() + " " + getIsOnPhone() + "\n";
 		return stats;
 	}
 

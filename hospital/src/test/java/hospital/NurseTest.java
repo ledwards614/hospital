@@ -61,8 +61,18 @@ public class NurseTest {
 		Patient ptOne = new Patient("Henry", 60, 20);
 		nurse.admitPatient(ptOne);
 		//caring for pt should increase health by 10
-		nurse.careForPt("Henry");
+		nurse.careForPt(ptOne);
 		assertEquals(30, nurse.getPatient("Henry").getCurrentHealth());
+		
+	}
+	@Test
+	public void testDrawBlood() {
+		Nurse nurse = new Nurse("Olivia", 225);
+		Patient ptOne = new Patient("Henry");
+		nurse.admitPatient(ptOne);
+		//caring for pt should increase health by 10
+		nurse.drawBlood(ptOne);
+		assertEquals(0, nurse.getPatient("Henry").getCurrentBlood());
 		
 		
 	}

@@ -3,7 +3,7 @@ package hospital;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Nurse extends Employee{
+public class Nurse extends Employee implements DrawBloodInterface, CareForPatientInterface{
 	private int NURSE_SALARY = 50000;
 	private int salary;
 
@@ -31,10 +31,10 @@ public class Nurse extends Employee{
 			}
 		}
 	}
-
-	public void careForPt(String patientName) {		
-		Patient ptToCareFor = this.getPatient(patientName);
-		ptToCareFor.increaseHealth();	
+@Override
+	public void careForPt(Patient patient) {		
+		
+		patient.increaseHealth();	
 	}
 /**
  * Returns a patient through name selection
@@ -51,22 +51,28 @@ public class Nurse extends Employee{
 	
 	}
 	public Collection<Patient> listPatients() {
-		String listOfPt = "Patients: ";
-		for (int i = 0; i < patientList.size(); i++) {
-			listOfPt = patientList.get(i).getName() + ", ";
-		}
+		//String listOfPt = "Patients: ";
+		//for (int i = 0; i < patientList.size(); i++) {
+			//listOfPt = patientList.get(i).getName() + ", ";
+		//}
 		return patientList;
 	}
 	
 	@Override
 	public String toString() {
-		String stats = "Nurse: " + getName() + " " + getId() + " " + listPatients();
+		String stats = getClass().getSimpleName() + ": " + getName() + " " + getId() + " " + listPatients() + "\n";
 		return stats;
 	}
 
 	@Override
 	public int calculatePay() {
 		return NURSE_SALARY;
+	}
+
+	@Override
+	public void drawBlood(Patient patient) {
+		patient.decreaseBlood();
+		
 	}
 
 

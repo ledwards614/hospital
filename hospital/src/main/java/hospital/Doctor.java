@@ -30,22 +30,22 @@ public class Doctor extends Employee implements DrawBloodInterface, CareForPatie
 	
 	@Override
 	public String toString() {
-		String stats = "Doctor: " + getName() + " " + getId() + " " + getSpecialty();
+		String stats = getClass().getSimpleName() + ": " + getName() + " " + getId() + " " + getSpecialty() + "\n";
 		return stats;
 	}
 
+	
 	@Override
-	public void careForPatient() {
-		// TODO Auto-generated method stub
+	public void drawBlood(Patient patient) {
+		patient.decreaseBlood();
 		
 	}
 
 	@Override
-	public void drawBlood() {
-		// TODO Auto-generated method stub
+	public void careForPt(Patient patient) {
+		patient.increaseHealth();	
 		
 	}
 
 	
-
 }
