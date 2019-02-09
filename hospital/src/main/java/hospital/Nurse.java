@@ -36,6 +36,14 @@ public class Nurse extends Employee implements DrawBloodInterface, CareForPatien
 		
 		patient.increaseHealth();	
 	}
+
+public void careForAllPatients() {		
+	for (Patient p : patientList) {
+		p.increaseHealth();
+	}
+	
+}
+
 /**
  * Returns a patient through name selection
  * @param name the name of patient
