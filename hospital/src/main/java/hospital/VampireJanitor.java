@@ -12,7 +12,4 @@ public class VampireJanitor extends Janitor implements DrawBloodInterface {
 		patient.decreaseBlood();
 		
 	}
-
-	
-
 }
