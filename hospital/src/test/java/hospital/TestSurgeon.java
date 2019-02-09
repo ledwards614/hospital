@@ -36,6 +36,25 @@ public class TestSurgeon {
 		
 	}
 	
+	@Test
+	public void testCareForPt() {
+		Surgeon surgeon = new Surgeon("Olivia", 225, "Hands");
+		Patient ptOne = new Patient("Henry");
+		surgeon.careForPt(ptOne);
+		//caring for pt should increase health by 10 (default set at 10, increase to 20)
+		assertEquals(20, ptOne.getCurrentHealth());	
+	}
+
+	@Test
+	public void testDrawBlood() {
+		Surgeon surgeon = new Surgeon("Olivia", 225, "Hands");
+		Patient ptOne = new Patient("Henry");
+		surgeon.drawBlood(ptOne);
+		//draw blood should reduce to zero
+		assertEquals(0, ptOne.getCurrentBlood());
+		
+		
+	}
 	
 
 }

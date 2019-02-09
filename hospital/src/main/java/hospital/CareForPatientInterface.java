@@ -1,7 +1,7 @@
 package hospital;
 
 public interface CareForPatientInterface {
-	
-	public void careForPatient();
+
+	void careForPt(Patient patient);
 
 }

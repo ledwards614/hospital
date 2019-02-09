@@ -1,9 +1,5 @@
 package hospital;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
-
 public class Janitor extends Employee {
 	
 	private int JANITOR_SALARY = 40000;
@@ -26,8 +22,9 @@ public class Janitor extends Employee {
 	}
 	@Override
 	public String toString() {
-		String stats = "Janitor: " + getName() + " " + getId() + " " + getIsSweeping();
+		String stats = getClass().getSimpleName() + ": " + getName() + " " + getId() + " " + getIsSweeping() + "\n";
 		return stats;
 	}
 	
 }
+

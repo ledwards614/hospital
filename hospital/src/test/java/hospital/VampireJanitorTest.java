@@ -12,4 +12,14 @@ public class VampireJanitorTest {
 		//is it necessary to test methods inherited from superclasses?
 	}
 
+	@Test
+	public void testDrawBlood() {
+		VampireJanitor vamp = new VampireJanitor("Drake", 4444);
+		Patient ptOne = new Patient("Henry");
+		vamp.drawBlood(ptOne);
+		//blood should reduce to zero
+		assertEquals(0, ptOne.getCurrentBlood());
+		
+		
+	}
 }
