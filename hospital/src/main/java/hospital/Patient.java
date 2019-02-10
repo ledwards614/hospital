@@ -1,45 +1,46 @@
 package hospital;
 
-
 public class Patient {
-	//I think health and blood levels may increment by 20 and 10
 	private static final int BLOOD_LEVEL = 20;
 	private static final int HEALTH_LEVEL = 10;
 	private int currentBloodLevel;
 	private int currentHealth;
 	private String name;
-	
-	//logic for constructor:
-	//when pt is admitted to hopsital vitals are checked (blood, health)
-	//then as time goes by health and blood increase or decrease based on 
-	//diffent employees interaction. but only through contstants BLOOD_LEVEL and HEALTH_LEVEl
-	//can the stats be altered
-	public Patient(String name, int currentBloodLevel, int currentHealth ) {
+
+	/**
+	 * logic for constructor: when patient is admitted to hospital vitals are
+	 * checked (blood, health)
+	 * 
+	 * @param name
+	 * @param currentBloodLevel
+	 * @param currentHealth
+	 */
+	public Patient(String name, int currentBloodLevel, int currentHealth) {
 		this.name = name;
 		this.currentBloodLevel = currentBloodLevel;
 		this.currentHealth = currentHealth;
 	}
+
 	/**
 	 * Patient gets admitted to hospital with default values
-	 * @param name the patients name
+	 * 
+	 * @param name
 	 */
 	public Patient(String name) {
 		this.name = name;
 		this.currentBloodLevel = BLOOD_LEVEL;
 		this.currentHealth = HEALTH_LEVEL;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
-	
+
 	public int getCurrentBlood() {
 		return currentBloodLevel;
-		
+
 	}
-	
-	
+
 	public int getCurrentHealth() {
 		return currentHealth;
 	}
@@ -47,19 +48,21 @@ public class Patient {
 	public void decreaseBlood() {
 		currentBloodLevel -= BLOOD_LEVEL;
 	}
+
 	public void increaseHealth() {
 		currentHealth += HEALTH_LEVEL;
 	}
+
 	/**
-	 * As time passes without pt care pt health decreases by 1
+	 * tick decreases health if patient is not being cared for regularly
 	 */
-	 public void tick() {
-		 currentHealth -= 1;
-	 }
-	
-	 public String toString() {
-		 return this.getName() + "";
-		 
-	 }
+	public void tick() {
+		currentHealth -= 1;
+	}
+
+	public String toString() {
+		return this.getName() + "";
+
+	}
 
 }

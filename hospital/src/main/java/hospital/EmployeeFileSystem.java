@@ -1,13 +1,11 @@
 package hospital;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class EmployeeFileSystem {
 	private ArrayList<Employee> listEmployees = new ArrayList<>();
 
 	public EmployeeFileSystem() {
-		// this.listEmployees = listEmployees;
 	}
 
 	public void add(Employee e) {
@@ -48,46 +46,12 @@ public class EmployeeFileSystem {
 
 	public String basicEmployeeInfo() {
 		String employeeInfo = "Current Employees:\n";
-//		for (Employee e : listEmployees) {
-//			if (e instanceof Doctor) {
-//
-//				employeeInfo += ((Doctor) e).toString();
-//			}
-//			if (e instanceof Nurse) {
-//
-//				employeeInfo += ((Nurse) e).toString();
-//			}
-//			if (e instanceof Surgeon) {
-//
-//				employeeInfo += ((Surgeon) e).toString();
-//			}
-//			if (e instanceof Janitor) {
-//
-//				employeeInfo += ((Janitor) e).toString();
-//			}
-//			if (e instanceof VampireJanitor) {
-//
-//				employeeInfo += ((VampireJanitor) e).toString();
-//			}
-//			if (e instanceof Receptionist) {
-//
-//				employeeInfo += ((Receptionist) e).toString();
-//			}
-//
-//		}
-//		return employeeInfo;
 
 		for (int i = 0; i < listEmployees.size(); i++) {
-
 			employeeInfo += listEmployees.get(i).toString();
-			// String name = listEmployees.get(i).getName();
-			// employeeSalaries = employeeSalaries + name + " receives a salary of $" +
-			// salary + " per year\n";
-
 		}
 		return employeeInfo;
 	}
-	// }
 
 	public String canDrawBlood() {
 		String drawBlood = "List of Employees able to Draw Blood\n";
@@ -101,11 +65,6 @@ public class EmployeeFileSystem {
 				drawBlood += ((Nurse) e).getName() + " is capable of drawing blood\n";
 
 			}
-//			if (e instanceof Surgeon) {
-//
-//				drawBlood += ((Surgeon) e).getName() + " is capable of drawing blood\n";
-//
-//			}
 			if (e instanceof VampireJanitor) {
 				drawBlood += ((VampireJanitor) e).getName() + " is capable of drawing blood\n";
 			}
@@ -125,11 +84,6 @@ public class EmployeeFileSystem {
 				careForPatients += ((Nurse) listEmployees.get(i)).getName() + " is able to care for patients\n";
 
 			}
-//			if (listEmployees.get(i) instanceof Surgeon) {
-//
-//				careForPatients += ((Surgeon) listEmployees.get(i)).getName() + " is able to care for patients\n";
-//
-//			}
 		}
 		return careForPatients;
 	}

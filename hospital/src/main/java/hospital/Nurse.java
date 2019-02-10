@@ -5,14 +5,12 @@ import java.util.Collection;
 
 public class Nurse extends Employee implements DrawBloodInterface, CareForPatientInterface {
 	private int NURSE_SALARY = 50000;
-	private int salary;
 
 	// List of Patients
 	ArrayList<Patient> patientList = new ArrayList<>();
 
 	public Nurse(String name, int idNum) {
 		super(name, idNum);
-		this.salary = NURSE_SALARY;
 	}
 
 	public void admitPatient(Patient patient) {
@@ -68,10 +66,6 @@ public class Nurse extends Employee implements DrawBloodInterface, CareForPatien
 	}
 
 	public Collection<Patient> listPatients() {
-		// String listOfPt = "Patients: ";
-		// for (int i = 0; i < patientList.size(); i++) {
-		// listOfPt = patientList.get(i).getName() + ", ";
-		// }
 		return patientList;
 	}
 

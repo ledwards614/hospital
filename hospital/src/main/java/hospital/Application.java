@@ -183,7 +183,7 @@ public class Application {
 			}
 
 		}
-
+		input.close();
 	}
 
 	private static void vampireJanitorMenu(Scanner input, EmployeeFileSystem listEmployees) {
@@ -488,10 +488,25 @@ public class Application {
 				patientToDrawBlood.tick();
 				break;
 			case "5":
-				// admit patient ----- not required do last
+				// admit patient
+				System.out.println("Please enter the patient name that you are admitting to hospital");
+				String patientName = input.nextLine();
+				System.out.println("Please enter the patient's blood level");
+				int blood = input.nextInt();
+				input.nextLine();
+				System.out.println("Please enter the patient's health level");
+				int health = input.nextInt();
+				input.nextLine();
+				Patient patientToAdd = new Patient(patientName, blood, health);
+				nurseSelection.admitPatient(patientToAdd);
+				System.out.println(patientName + " has been added to your rounds");
 				break;
 			case "6":
-				// release patient -----not required do last
+				// release patient
+				System.out.println("Please enter patient name that is being release from your care");
+				String patientReleasedName = input.nextLine();
+				nurseSelection.releasePatient(patientReleasedName);
+				System.out.println(patientReleasedName + " has been removed from your rounds");
 				break;
 			case "7":
 
@@ -501,4 +516,5 @@ public class Application {
 
 		}
 	}
+	
 }
