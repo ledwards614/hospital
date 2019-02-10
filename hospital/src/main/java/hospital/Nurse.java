@@ -3,7 +3,7 @@ package hospital;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Nurse extends Employee implements DrawBloodInterface, CareForPatientInterface{
+public class Nurse extends Employee implements DrawBloodInterface, CareForPatientInterface {
 	private int NURSE_SALARY = 50000;
 	private int salary;
 
@@ -31,24 +31,32 @@ public class Nurse extends Employee implements DrawBloodInterface, CareForPatien
 			}
 		}
 	}
-@Override
-	public void careForPt(Patient patient) {		
-		
-		patient.increaseHealth();	
+
+	public void tickAll() {
+		for (int i = 0; i < patientList.size(); i++) {
+			patientList.get(i).tick();
+		}
 	}
 
-public void careForAllPatients() {		
-	for (Patient p : patientList) {
-		p.increaseHealth();
-	}
-	
-}
+	@Override
+	public void careForPt(Patient patient) {
 
-/**
- * Returns a patient through name selection
- * @param name the name of patient
- * @return the Patient Object
- */
+		patient.increaseHealth();
+	}
+
+	public void careForAllPatients() {
+		for (Patient p : patientList) {
+			p.increaseHealth();
+		}
+
+	}
+
+	/**
+	 * Returns a patient through name selection
+	 * 
+	 * @param name the name of patient
+	 * @return the Patient Object
+	 */
 	public Patient getPatient(String patientName) {
 		for (int i = 0; i < patientList.size(); i++) {
 			if (patientName.equalsIgnoreCase(patientList.get(i).getName())) {
@@ -56,19 +64,20 @@ public void careForAllPatients() {
 			}
 		}
 		return null;
-	
+
 	}
+
 	public Collection<Patient> listPatients() {
-		//String listOfPt = "Patients: ";
-		//for (int i = 0; i < patientList.size(); i++) {
-			//listOfPt = patientList.get(i).getName() + ", ";
-		//}
+		// String listOfPt = "Patients: ";
+		// for (int i = 0; i < patientList.size(); i++) {
+		// listOfPt = patientList.get(i).getName() + ", ";
+		// }
 		return patientList;
 	}
-	
+
 	@Override
 	public String toString() {
-		String stats = getClass().getSimpleName() + ": " + getName() + " " + getId() + " " + listPatients() + "\n";
+		String stats = super.toString() + " " + listPatients() + "\n";
 		return stats;
 	}
 
@@ -80,8 +89,7 @@ public void careForAllPatients() {
 	@Override
 	public void drawBlood(Patient patient) {
 		patient.decreaseBlood();
-		
-	}
 
+	}
 
 }

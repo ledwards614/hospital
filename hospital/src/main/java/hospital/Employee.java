@@ -21,5 +21,8 @@ public abstract class Employee {
 
 	public abstract int calculatePay();
 	
-
+	public String toString() {
+		String stats = getClass().getSimpleName() + ": " + getName() + " " + getId();
+		return stats;
+	}
 }

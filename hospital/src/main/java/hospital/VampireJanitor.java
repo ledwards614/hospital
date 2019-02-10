@@ -10,6 +10,5 @@ public class VampireJanitor extends Janitor implements DrawBloodInterface {
 	@Override
 	public void drawBlood(Patient patient) {
 		patient.decreaseBlood();
-		
 	}
 }

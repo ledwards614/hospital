@@ -49,6 +49,6 @@ public class PatientTest {
 	public void testTickHealth() {
 		Patient pt = new Patient("Marvin", 40, 60);
 		pt.tick();
-		assertEquals(50, pt.getCurrentHealth());
+		assertEquals(59, pt.getCurrentHealth());
 	}
 }

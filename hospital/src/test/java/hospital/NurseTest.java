@@ -91,7 +91,23 @@ public class NurseTest {
 		//caring for pt should increase health by 10
 		nurse.drawBlood(ptOne);
 		assertEquals(0, nurse.getPatient("Henry").getCurrentBlood());
+	}
+	
+	@Test
+	public void testTickALl( ) {
+		Nurse nurse = new Nurse("Olivia", 225);
+		Patient ptOne = new Patient("Henry", 60, 20); 
+		Patient ptTwo = new Patient("Jack", 50, 50); 
+		Patient ptThree = new Patient("Evan", 40, 40); 
+		nurse.admitPatient(ptOne);
+		nurse.admitPatient(ptTwo);
+		nurse.admitPatient(ptThree);
 		
+		nurse.tickAll();
+		
+		assertEquals(19, ptOne.getCurrentHealth());
+		assertEquals(49, ptTwo.getCurrentHealth());
+		assertEquals(39, ptThree.getCurrentHealth());
 		
 	}
 	
