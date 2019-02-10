@@ -2,8 +2,6 @@ package hospital;
 
 import static org.junit.Assert.assertEquals;
 
-import javax.print.Doc;
-
 import org.junit.Test;
 
 public class DoctorTest {

@@ -22,7 +22,7 @@ public class Janitor extends Employee {
 	}
 	@Override
 	public String toString() {
-		String stats = getClass().getSimpleName() + ": " + getName() + " " + getId() + " " + getIsSweeping() + "\n";
+		String stats = super.toString() + " " + getIsSweeping() + "\n";
 		return stats;
 	}
 	

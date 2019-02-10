@@ -30,7 +30,6 @@ public class Patient {
 	}
 	
 	public String getName() {
-		// TODO Auto-generated method stub
 		return name;
 	}
 	
@@ -52,10 +51,10 @@ public class Patient {
 		currentHealth += HEALTH_LEVEL;
 	}
 	/**
-	 * As time passes without pt care pt health decreases by 10
+	 * As time passes without pt care pt health decreases by 1
 	 */
 	 public void tick() {
-		 currentHealth -= HEALTH_LEVEL;
+		 currentHealth -= 1;
 	 }
 	
 	 public String toString() {

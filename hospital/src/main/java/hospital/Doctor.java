@@ -30,7 +30,7 @@ public class Doctor extends Employee implements DrawBloodInterface, CareForPatie
 	
 	@Override
 	public String toString() {
-		String stats = getClass().getSimpleName() + ": " + getName() + " " + getId() + " " + getSpecialty() + "\n";
+		String stats = super.toString() + " " + getSpecialty() + "\n";
 		return stats;
 	}
 

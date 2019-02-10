@@ -25,7 +25,6 @@ public class Surgeon extends Doctor implements DrawBloodInterface, CareForPatien
 	
 	@Override
 		public void careForPt(Patient patient) {		
-			//Patient ptToCareFor = new Patient(patientName);
 			patient.increaseHealth();	
 		}
 	
